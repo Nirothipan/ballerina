@@ -51,6 +51,12 @@ public abstract class AbstractTimeFunction extends BlockingNativeCallableUnit {
                 ZoneId.systemDefault().toString());
     }
 
+    BStruct createNanoTime(Context context) {
+        long currentTime = System.nanoTime();
+        return Utils.createTimeStruct(getTimeZoneStructInfo(context), getTimeStructInfo(context), currentTime,
+                ZoneId.systemDefault().toString());
+    }
+
     BStruct createDateTime(Context context, int year, int month, int day, int hour, int minute, int second,
             int milliSecond, String zoneIDStr) {
         int nanoSecond = milliSecond * 1000000;
