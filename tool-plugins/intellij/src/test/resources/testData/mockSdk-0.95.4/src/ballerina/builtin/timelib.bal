@@ -20,6 +20,10 @@ public struct Time {
 @Return { value:"Time struct containing the time and zone information."}
 public native function currentTime()(Time);
 
+@Description {value:"Returns the current time value with the system default timezone in nanoe seconds."}
+@Return { value:"Time struct containing the time and zone information."}
+public native function nanoTime()(Time);
+
 @Description {value:"Returns the Time struct correspoding to the given time components and timezone."}
 @Param {value:"year: The year representation"}
 @Param {value:"month: The month-of-year to represent, from 1 (January) to 12 (December)"}
